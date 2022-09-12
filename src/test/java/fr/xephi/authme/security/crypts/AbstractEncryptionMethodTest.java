@@ -28,7 +28,7 @@ public abstract class AbstractEncryptionMethodTest {
      * List of passwords whose hash is provided to the class to test against; this verifies that previously constructed
      * hashes remain valid.
      */
-    private static final String[] GIVEN_PASSWORDS = {"password", "PassWord1", "&^%te$t?Pw@_", "âË_3(íù*"};
+    private static final String[] GIVEN_PASSWORDS = {"PassWord1", "&^%te$t?Pw@_"};
     /**
      * List of passwords that are hashed at runtime and then tested against; this verifies that newly generated hashes
      * are valid.
@@ -69,10 +69,8 @@ public abstract class AbstractEncryptionMethodTest {
         this.method = method;
 
         hashes = ImmutableMap.of(
-            GIVEN_PASSWORDS[0], new HashedPassword(hash0),
-            GIVEN_PASSWORDS[1], new HashedPassword(hash1),
-            GIVEN_PASSWORDS[2], new HashedPassword(hash2),
-            GIVEN_PASSWORDS[3], new HashedPassword(hash3));
+            GIVEN_PASSWORDS[0], new HashedPassword(hash1),
+            GIVEN_PASSWORDS[1], new HashedPassword(hash2));
     }
 
     /**
@@ -91,10 +89,8 @@ public abstract class AbstractEncryptionMethodTest {
         this.method = method;
 
         hashes = ImmutableMap.of(
-            GIVEN_PASSWORDS[0], result0,
-            GIVEN_PASSWORDS[1], result1,
-            GIVEN_PASSWORDS[2], result2,
-            GIVEN_PASSWORDS[3], result3);
+            GIVEN_PASSWORDS[0], result1,
+            GIVEN_PASSWORDS[1], result2);
     }
 
     @BeforeClass
